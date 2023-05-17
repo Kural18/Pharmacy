@@ -1,0 +1,47 @@
+<%- include("header") -%>
+
+<div class="box" id="heading">
+    <h1> Add A New Item</h1>
+</div>
+
+
+<div >
+     <form action="/last" method="post">
+        <div class="box">
+        <label class="head" for="fname">Enter the new medicine name:</label>
+        <input type="text" name="newItem" placeholder="New Item" autocomplete="off" value="<%= user.name %>"><br>
+        <label class="head" for="fname">Enter the existing quantity medicine name:</label>
+        <input type="text" name="quant" placeholder="Quantity" autocomplete="off" value="<%= user.quantity %>"><br>
+        <label class="head" for="fname">Enter the price of the medicine:</label>
+        <input type="text" name="price" placeholder="Price" autocomplete="off" value="<%= user.price %>"><br>
+        </div>
+        <button class="add" type="submit" name="list">Update</button>
+      </form>
+    
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%- include("footer") -%>

@@ -1,0 +1,37 @@
+<%- include("header") -%>
+
+  <div class="box" id="heading">
+    <h1> <%= listTitle %> </h1>
+  </div>
+
+  <div class="box">
+    <div class="row">
+      <h2 class="block moveleftr">Product</h2>
+      <h2 class="block moveleftq">Quantity</h2>
+      <h2 class="block moveleftp">Price</h2>
+      <h2 class="block moveleft">Action</h2>
+    </div>
+    <% for (let i=0; i<newListItems.length; i++) { %>
+      <div class="item">
+        <div class="row">
+          <p class="block"> <%=  newListItems[i].name  %></p>
+          <p class="block"><%=  newListItems[i].quantity  %></p>
+          <p class="block"><%=  newListItems[i].price  %></p>
+          <div class="inner">
+            <form  class="moveright" action="/delete" method="post">
+              <button type="submit" name="checkbox" value="<%= newListItems[i]._id %>" class="fabutton"><i class="fas fa-trash"></i></button>
+            </form>
+            <form class="moveright" action="/update" method="post">
+              <button type="submit" name="checkbox2" value="<%= newListItems[i]._id %>" class="fabutton"><i class="fas fa-pen"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <% } %>
+  </div>
+  
+  <div class="adding">
+      <a class="add" href='/add'>Add Item</a>
+  </div>
+
+<%- include("footer") -%>
